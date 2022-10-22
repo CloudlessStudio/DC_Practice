@@ -1,8 +1,15 @@
-function Greet(name) 
+
+const numbers = [10,23,45,6,7,99];
+function calc(nums) 
     {
-    console.log("Hello, " + name + " nice to meet you!");
+    let ans = 0; 
+    for(let i = 0; i<nums.length; i++)
+    {
+        ans += nums[i];
+    }
+    console.log(ans);
     }
   
-  Greet("Konrad");
+  calc(numbers);
 
 
