@@ -17,7 +17,7 @@
     //append to value
     function appendNum(numb)
     {
-        if (currentOp.length!=0)
+        if (currentOp.length==0)
         {
             var1 += numb;
             display(var1);
@@ -32,8 +32,8 @@
     function answer()
     {
         //had to switch these vars otherwise this wont work.... no idea why?
-        let v2 = parseInt(var1);
-        let v1 = parseInt(var2);
+        let v1 = parseInt(var1);
+        let v2 = parseInt(var2);
         let product;
         let ans = '';
         console.log("first num: " +v1);
