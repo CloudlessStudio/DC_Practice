@@ -11,10 +11,10 @@ function bub(arr)
             arr[i+1]= a;
             
         }
-        console.log(arr);
-        arr2 = arr;
-        bub(arr2);
     }
+    console.log(arr);
+    arr2 = arr;
+    bub(arr2);
         
 
 

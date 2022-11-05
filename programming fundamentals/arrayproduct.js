@@ -47,6 +47,7 @@ function product(a,b)
     console.log("array a is " + a);
     console.log("array b is " + b);
     console.log("product of a and b is " + c);
+    return c;
   }
 a1 = [4,2,6,0,8];
 b1 = [9,4,3,5,12,33,4,55,66,7,8];

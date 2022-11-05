@@ -28,12 +28,72 @@
             display(var2);
         }
     }
+
+    //remove value
+
+    function removeNum()
+    {
+        if (currentOp.length==0)
+        {
+            var1 -= var1[var1.length-1];
+            console.log("new val: " + var1);
+            display(var1);
+        }
+        else
+        {
+            var2 -= var2[var2.length-1];
+            display(var2);
+        }
+    }
+
+
+    //adding decimal
+    function decimal()
+    {
+        if (currentOp.length==0)
+        {
+            var1 += ".";
+            display(var1);
+        }
+        else
+        {
+            var2 += ".";
+            display(var2);
+        }
+    }
+
+
+    //squre root
+    function SQRT()
+    {
+        if (currentOp.length==0)
+        {
+            var1 = Math.sqrt(var1);
+            display(var1);
+            var1 = "";
+            var2 = "";
+            currentOp = '';
+        }
+    }
+
+
+    //square
+    function square()
+    {
+        var1 *= var1;
+        display(var1);
+        var1 = "";
+        var2 = "";
+        currentOp = '';
+    }
+
+
     //get answer
     function answer()
     {
         //had to switch these vars otherwise this wont work.... no idea why?
-        let v1 = parseInt(var1);
-        let v2 = parseInt(var2);
+        let v1 = parseFloat(var1);
+        let v2 = parseFloat(var2);
         let product;
         let ans = '';
         console.log("first num: " +v1);
@@ -74,9 +134,6 @@
         var2 = "";
         currentOp = '';
         display(ans);
-
-
-
     }
 
     //clear calculator
@@ -116,7 +173,6 @@
             currentOp = ops[2];
             display("*");
 
-        
     }
 
 
