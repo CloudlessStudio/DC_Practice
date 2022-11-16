@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script>
+            function addMore(){
+                let item = prompt("what would you like to add?");       //fill in our prompt
+                const pDiv = document.getElementById("parentDiv");      //getting parent elem
+                const newChild = document.createElement("div");         //creating new child in parent div class
+                newChild.innerText = item;                              //create new filling to our child
+                pDiv.append(newChild);                                  //add to our div
+                const rem = document.createElement("button");           //create button for removal
+                rem.innerText = "remove";                               //button text
+                pDiv.append(rem);                                       //add remove bttn to div
+                rem.addEventListener("click", event=>{                  //function remove button and div
+                newChild.remove();
+                rem.remove();
+                }) 
+        }
+
+        </script>
+        <body>
+            <div id = "parentDiv">
+                <div>APPLE</div>
+                <div>GRAPE</div>
+            </div>
+            <button onclick="addMore();"> Add Stuff</button>
+        </body>
+    </head>
+</html>

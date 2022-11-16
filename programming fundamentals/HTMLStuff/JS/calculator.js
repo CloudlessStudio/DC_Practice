@@ -29,22 +29,7 @@
         }
     }
 
-    //remove value
 
-    function removeNum()
-    {
-        if (currentOp.length==0)
-        {
-            var1 -= var1[var1.length-1];
-            console.log("new val: " + var1);
-            display(var1);
-        }
-        else
-        {
-            var2 -= var2[var2.length-1];
-            display(var2);
-        }
-    }
 
 
     //adding decimal

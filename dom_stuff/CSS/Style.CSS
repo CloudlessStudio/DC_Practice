@@ -1,0 +1,96 @@
+*{
+    font-family: 'VT323', monospace;
+    background-color: #000;
+    color: lawngreen;
+
+}
+body{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.main{
+    padding: 70px;
+    padding-bottom: 500px;
+    background-color: black;
+    width: 400px;  
+    display: block; 
+    text-align: center;
+    border: #fff;
+    border-width: 5px;
+    border-style: solid;
+    margin: 0 auto;
+}
+.title{
+
+    display: block;
+    text-align: center;
+    font-size: 60px;
+    background-color: black;
+    padding-bottom: 30px;
+}
+.input-field{
+    padding-top: 25px;
+    font-size: 25px;
+    padding-bottom: 15px;
+}
+.input-field input{
+    height: 25px;
+    width: 195px;
+}
+.input-field button{
+    height: 29px;
+    border: 2px;
+    border-style: solid;
+}
+.input-field button:hover{
+    cursor: pointer;
+}
+.input-field button:active{
+    background-color: lime;
+}
+
+.pending{
+    font-size: 30px;
+    padding-top: 20px;
+    padding-bottom: 90px;
+
+}
+.completed{
+    font-size: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.taskName{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 60px;
+    width: 400px;
+    border-color: #fff;
+    border-style: solid;
+    text-align: center;
+    display: flex;
+}
+.taskName button{
+    margin: auto;
+    height: 40px;
+    border: 2px;
+    border-style: solid;
+}
+.taskName p{
+    text-align: center;
+    width: 200px;
+    margin: auto;
+    height: 40px;
+
+
+}
+.taskName button:active{
+    background-color: lime;
+}
+
+input[type="checkbox"]{
+    background-color: aqua;
+}
+.boxStyle input{
+    background-color: aqua;
+}

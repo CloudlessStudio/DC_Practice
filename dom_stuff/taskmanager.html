@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href = "CSS/Style.css">
+        <body>
+            <div class = "main">
+                <div class = "title">
+                    TASK MANAGER 
+                </div>
+                <div class = "input-field" >
+                    <label>Enter Task: </label>
+                    <input type = "text" id="inputTask" placeholder="Complete This assignment">
+                    <button onclick="addTask();">Add</button>
+                </div>
+                <div class = "pending" id = "pendingSection">
+                    TO DO:
+                    
+                </div>
+                <div class = "completed" id = "completedSection">
+                    COMPLETED:
+                
+                </div>
+            </div>
+        <script src="JS/task.js"></script>
+        </body>
+    </head>
+</html>
