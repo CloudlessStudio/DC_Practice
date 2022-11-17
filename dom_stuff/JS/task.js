@@ -15,6 +15,7 @@ function addTask(){
     pendingChild.append(pendingText);
     pendingChild.append(removeButton);
     pendingDiv.append(pendingChild);
+    document.getElementById("inputTask").value = "";
     removeButton.addEventListener("click", event =>{
         pendingChild.remove();
     })

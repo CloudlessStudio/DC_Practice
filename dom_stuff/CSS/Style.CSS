@@ -75,6 +75,7 @@ body{
     height: 40px;
     border: 2px;
     border-style: solid;
+    cursor: pointer;
 }
 .taskName p{
     text-align: center;
@@ -88,9 +89,33 @@ body{
     background-color: lime;
 }
 
+
+
+
+
 input[type="checkbox"]{
-    background-color: aqua;
+    margin: auto;
+    appearance: none;
+    height: 40px;
+    width: 40px;
+    border: 2px;
+    border-style: solid;
+    cursor: pointer;
 }
-.boxStyle input{
-    background-color: aqua;
+input[type="checkbox"]:after{
+    margin: -25%;
+    font-weight: 900;
+    content:"X";
+    font-size: 50px;
+    color: #000;
+    display: none;
+    text-align: center;
+}
+input[type="checkbox"]:checked{
+    
+    background-color: lime;
+}
+
+input[type="checkbox"]:checked:after{
+    display: block;
 }
