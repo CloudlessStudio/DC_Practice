@@ -60,7 +60,7 @@ body{
     padding-top: 20px;
     padding-bottom: 20px;
 }
-.taskName{
+/* .taskName{
     padding-top: 5px;
     padding-bottom: 5px;
     height: 60px;
@@ -69,9 +69,26 @@ body{
     border-style: solid;
     text-align: center;
     display: flex;
+} */
+
+.taskName{
+    /* padding-top: 5px;
+    padding-bottom: 5px; */
+    height: 60px;
+    width: 400px;
+    padding: 2px;
+    margin-bottom: 5px;
+    
+    border-color: #fff;
+    border-style: solid;
+    /* text-align: center; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
 }
 .taskName button{
-    margin: auto;
+    /* margin: auto; */
     height: 40px;
     border: 2px;
     border-style: solid;
@@ -80,7 +97,7 @@ body{
 .taskName p{
     text-align: center;
     width: 200px;
-    margin: auto;
+    /* margin: auto; */
     height: 40px;
 
 
@@ -94,7 +111,7 @@ body{
 
 
 input[type="checkbox"]{
-    margin: auto;
+    /* margin: auto; */
     appearance: none;
     height: 40px;
     width: 40px;

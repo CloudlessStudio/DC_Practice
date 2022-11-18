@@ -1,0 +1,18 @@
+*{
+    font-family: 'Syne Mono', monospace;
+}
+
+.main-container{
+    display: block;
+    margin:0 auto;
+    background-color: blue;
+    width: 400px;
+    text-align: center;
+}
+
+.TASK{
+    display: flex;
+    width: 400px;
+    margin:0 auto;
+    text-align: center;
+}
