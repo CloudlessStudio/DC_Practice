@@ -29,13 +29,6 @@ function addTask(){
     })
 
 
-   // <div class = "incomplete">
-   //     <div class = "TASK">
-   //     <input style= "checkbox"></input>
-   //     <p>sagagag</p>
-   //     <button>Remove</button>
-   // </div>
-   // </div>
     
 
 

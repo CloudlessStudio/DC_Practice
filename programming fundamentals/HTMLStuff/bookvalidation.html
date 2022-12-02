@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+        <body>
+            <div class = "Books">
+                ADD A BOOK BELOW
+            </div>
+            <div class = "book form">
+                <form>
+                    <div class="name">
+                        <div class="input-group">
+                            <label>Book Name:</label>
+                            <input type="text" max="50" placeholder="name of the book" required>
+                          </div>
+                    </div>
+                    <div class="ISBN">
+                        <div class="input-group">
+                            <label>ISBN:</label>
+                            <input type="text" max="13" placeholder="ISBN num" required>
+                          </div>
+                    </div>
+          
+                    <div class="Rating">
+                        <div class="input-group">
+                            <label>Rating:</label>
+                            <select name = "ratings" required>
+                                <option value="all">All Ages</option>
+                                <option value="6">6+</option>
+                                <option value="13">13+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="Media-Type">
+                        <div class="input-group">
+                            <label>MEDIA TYPE:</label>
+                            <input type="radio" name="media" required>Kindle
+                            <input type="radio" name="media" required>Hardcover
+                            <input type="radio" name="media" required>CD
+                        </div>
+                    </div>
+                    <div class="price">
+                        <div class="input-group">
+                            <label>Price:</label>
+                            <input type="text" id="price" onchange="cost();" required>
+                            <script>
+                                function cost(){
+                                    let price = document.getElementById("price").value;
+                                    let y = parseFloat(price);
+                                    let x = Math.round(y * 100) / 100;
+                                    x = "$" + x;
+                                    document.getElementById("price").value = x;
+                                }
+                            </script>
+
+                          </div>
+                    </div>
+                    <button>SUBMIT</button>
+                </form>
+            </div>
+        </body>
+
+</html>

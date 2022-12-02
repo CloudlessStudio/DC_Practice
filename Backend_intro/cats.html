@@ -1,0 +1,111 @@
+<html>
+    <style>
+        .parentContainerStyle{
+            display:flex;
+            flex-direction: row;
+            background-color:yellow;
+            width: 1500px;
+            border-style:solid;
+            border: black;
+            border-width: 12px;
+ 
+     
+        }
+        .catListContainerStyle{
+            display:flex;
+            flex-direction: column;
+            background-color: aqua;
+            width: 50%;
+            /* width: 200px;
+            height: 500px; */
+
+            
+
+        }
+        .catImageContainerStyle{
+            display:flex;
+            flex-direction: column;
+            background-image: linear-gradient(180deg, #020024 0%, #090979 35%, #00d4ff 100%);
+            width: 50%;
+            /* width: 200px;
+            height: 500px; */
+            color: #fff;
+            font-size: 40px;
+        }
+
+        .catRowStyle{
+            display: flex;
+            flex-direction: row;
+            column-gap: 10px;
+            justify-content: space-between;
+
+        }
+    </style>
+    <script>
+        function img_get(img, des){
+        const image = document.getElementById("photo");
+        const bio = document.getElementById("desc")
+        image.src = img;
+        bio.innerText = des;
+
+        }
+        function callApi(){
+            const api_request = new XMLHttpRequest();
+            api_request.onreadystatechange = function(){
+            if(api_request.readyState == 4){
+                const jsonFormatRespone = JSON.parse(api_request.responseText);
+                const catListContainer = document.getElementById("catListContainer");
+                for(let i=0; i<jsonFormatRespone.length; i++){
+                    const catInfo = jsonFormatRespone[i];
+                    const catRow = document.createElement("div");
+                    catRow.className = "catRowStyle";
+                    if(i%2==0){
+                        catRow.style.backgroundColor = "white";
+                    }
+                    else{
+                        catRow.style.backgroundColor = "gray";
+                    }
+                    const nameColumn = document.createElement("div");
+                    nameColumn.innerText = catInfo.name;
+                    nameColumn.style.fontSize = "20px";
+                    catRow.append(nameColumn);
+
+
+                    const moodColumn = document.createElement("span");
+                    moodColumn.innerText = catInfo.temperament;
+                    catRow.append(moodColumn);
+
+
+
+                    const imgColumn = document.createElement("span");
+                    const hrefImg = document.createElement("button");
+                    hrefImg.innerText = "CAT";
+                    hrefImg.addEventListener("click",()=>{
+                        img_get(catInfo.image.url, catInfo.description);
+                    })
+                    imgColumn.style.borderStyle =  "solid";
+                    imgColumn.style.borderWidth =  "3px";
+                    imgColumn.style.margin = "0";
+                    imgColumn.append(hrefImg);
+                    catRow.append(imgColumn);
+
+                    catListContainer.append(catRow);
+                }
+                console.log(jsonFormatRespone);
+            }
+            }
+            api_request.open("GET","https://api.thecatapi.com/v1/breeds");
+            api_request.send();
+            }
+    </script>
+    <body>
+        <div class="parentContainerStyle" id="parentContainer">
+            <div class="catListContainerStyle" id="catListContainer"></div>
+            <div class ="catImageContainerStyle"id="catImageContainer">
+                <img id="photo">
+                <div id ="desc"></div>
+            </div>
+        </div>
+        <button onclick="callApi()">CallApi</button>
+    </body>
+</html>
