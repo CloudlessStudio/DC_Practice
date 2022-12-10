@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <style>
+            .main-container{
+                display:flex;
+                flex-direction: row;
+                background-color:#fff;
+                width: 1500px;
+                border-style:solid;
+                border: black;
+                border-width: 12px;
+            }
+            .teams-container{
+                display: flex;
+                flex-direction: column;
+            }
+            .team{
+                display: flex;
+                flex-direction: row;
+                column-gap: 20px;
+                justify-content: space-between;
+                border: #000;
+                border-style: solid;
+                border-width: 4px;
+                color: #fff;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <button onclick="callApiViaAxios(teamApi)">Get Teams</button>
+        <div class="main-container" id="main">
+
+            <div class ="teams-container" id="teams">
+
+            </div>
+            <div class = "players-container" id="players">
+
+            </div>
+        </div>
+
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+         <script>
+
+        teamApi = "https://www.balldontlie.io/api/v1/teams"
+        playerApi ="https://www.balldontlie.io/api/v1/players"
+
+          function callApiViaAxios(api){
+            axios.get(api)
+            .then(response=>{
+                showData(response.data.data);
+            })
+        }
+        // function callApiViaAxios2(api){
+        //     axios.get(api)
+        //     .then(response=>{
+        //         lineup(response.data.data);
+        //     })
+        // }
+
+        // function lineup(response){
+        //     const playersBox = document.getElementById("players-container")
+        //         for(let i = 0; i<response.length; i++){
+        //             const playername = response[i];
+        //             const playersInfo = document.createElement("div");
+        //             playersInfo.className = "players";
+        //             if(playername.team.name == teamData.name){
+        //                 playersInfo.innerText = playersInfo.last_name;
+        //             }
+        //             playersBox.append(playersInfo);
+
+        //         }    
+        
+        // }
+
+            function showData(response){
+                console.log(response);
+                const teamsBox = document.getElementById("teams");
+                for(let i = 0; i<response.length; i++){
+                    const teamData = response[i];
+                    console.log(teamData);
+                    const team = document.createElement("div");
+                    team.className = "team";
+
+                    const city = document.createElement("span");
+                    city.innerText = teamData.city;
+                    team.append(city);
+
+                    const name = document.createElement("span");
+                    name.innerText = teamData.name;
+                    team.append(name);
+
+                    const conf = document.createElement("span");
+                    conf.innerText = teamData.conference;
+                    team.append(conf);
+
+                    const ballers = document.createElement("button");
+                    ballers.innerText = "Ballers";
+                    // ballers.addEventListener("click", ()=>{
+                    //     callApiViaAxios2(playerApi);
+                    // })
+
+                    if(conf.innerText=="West"){
+                        team.style.background = "red";
+                    }
+                    else{
+                        team.style.background = "blue";
+                    }
+                    
+
+                    teamsBox.append(team);
+                    teamsBox.append(ballers);
+
+                }
+                
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <div class="main-container">
+            <div class = "lat-long">
+                <label >Latitude:</label>
+                <input type="text" id="lt">
+
+                <label >Longitude:</label>
+                <input type="text" id="ln">
+            </div>
+            <div class = "api-btn">
+                <button id="api-call">Call API</button>
+            </div>
+            <div class = "forecast" id ="forecast">
+
+            </div>
+        </div>
+        <script>
+            const apiBtn = document.getElementById("api-call"); //reference the button
+
+            apiBtn.addEventListener("click", ()=>{
+                const lat = document.getElementById("lt").value;
+                const lon = document.getElementById("ln").value;
+                CallApi(lat,lon);
+            })
+            function CallApi(Latitude, Longitude){
+               // console.log(Latitude,Longitude);              
+               // console.log("https://api.weather.gov/points/"+Latitude+","+Longitude);
+                fetch("https://api.weather.gov/points/"+Latitude+","+Longitude)
+                .then((r) => r.json())
+                .then((response)=>{
+                    showData(response)
+                })
+            }
+            function showData(apiResponse){
+                //const forecastBox = document.getElementById("forecast");
+                const forecastInfo = apiResponse.properties?.forecast;
+                const forecastCity = apiResponse.properties?.relativeLocation;
+                console.log(forecastInfo);
+                console.log(forecastCity);
+            }
+        </script>
+    </body>
+</html>
